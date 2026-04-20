@@ -1,12 +1,14 @@
 :root {
   --color-primary: #0c3285;
   --color-primary-dark: #081f55;
+  --color-bleu-carte-debut: #0c3285;
+  --color-bleu-carte-fin: #081f55;
   --color-accent: #ff8a3d;
   --color-text: #182235;
   --color-muted: #63718b;
-  --color-surface: rgba(255, 255, 255, 0.88);
-  --color-border: rgba(12, 50, 133, 0.14);
-  --shadow-soft: 0 24px 60px rgba(8, 31, 85, 0.16);
+  --color-surface: rgba(255, 255, 255, 0.92);
+  --color-border: transparent;
+  --shadow-soft: none;
   --radius-lg: 28px;
   --radius-md: 16px;
 }
@@ -16,14 +18,18 @@
 }
 
 body {
+  position: relative;
   margin: 0;
   min-height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--color-text);
-  background:
-    radial-gradient(circle at top left, rgba(12, 50, 133, 0.18), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(255, 138, 61, 0.18), transparent 30%),
-    linear-gradient(135deg, #f7faff 0%, #eef3fb 100%);
+  background: linear-gradient(135deg, #081a3d 0%, #0d3274 52%, #1352a5 100%);
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: none;
 }
 
 a {
@@ -43,26 +49,27 @@ img {
 }
 
 .en-tete-page-auth {
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
 .grille-authentification {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
-  gap: 24px;
+  gap: 28px;
   align-items: stretch;
 }
 
 .bloc-authentification {
-  border: 1px solid var(--color-border);
+  border: none;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
+  box-shadow: none;
   overflow: hidden;
 }
 
 .bloc-informations {
+  position: relative;
   padding: 34px;
-  background: linear-gradient(150deg, rgba(12, 50, 133, 0.96), rgba(8, 31, 85, 0.92));
+  background: linear-gradient(135deg, var(--color-bleu-carte-debut), var(--color-bleu-carte-fin));
   color: #ffffff;
 }
 
@@ -71,19 +78,17 @@ img {
   align-items: center;
   justify-content: center;
   padding: 28px;
-  background: var(--color-surface);
-  backdrop-filter: blur(12px);
+  background: rgba(249, 251, 255, 0.97);
 }
 
 .marque-site {
   display: inline-flex;
   width: fit-content;
-  color: var(--color-primary-dark);
+  color: #ffffff;
   font-size: 1.1rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: transform 0.22s ease;
 }
 
 .mot-symbole {
@@ -91,8 +96,8 @@ img {
   display: inline-block;
   padding: 10px 16px 12px;
   border-radius: 999px;
-  background: rgba(12, 50, 133, 0.06);
-  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 0.22s ease, background 0.22s ease;
 }
 
 .marque-site .mot-symbole::after {
@@ -103,13 +108,12 @@ img {
   bottom: 8px;
   height: 3px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  background: linear-gradient(135deg, #ffffff, var(--color-accent));
 }
 
 .marque-site:hover .mot-symbole {
   transform: translateY(-4px);
-  background: rgba(12, 50, 133, 0.1);
-  box-shadow: 0 14px 26px rgba(12, 50, 133, 0.18);
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .marque-site:active .mot-symbole {
@@ -122,8 +126,8 @@ img {
   margin: 0 0 18px;
   padding: 8px 16px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.94);
   font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -137,7 +141,7 @@ img {
 
 .texte-authentification {
   margin: 18px 0 0;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.84);
   line-height: 1.8;
 }
 
@@ -158,10 +162,9 @@ img {
   font-weight: 700;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
-  text-decoration: none;
   background: rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-md);
-  transition: all 0.2s ease-in-out;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .lien-retour:hover {
@@ -199,18 +202,18 @@ img {
 .champ-saisie {
   width: 100%;
   padding: 15px 16px;
-  border: 1px solid rgba(12, 50, 133, 0.16);
+  border: 1px solid rgba(12, 50, 133, 0.08);
   border-radius: var(--radius-md);
-  background: #ffffff;
+  background: #f7f9fd;
   color: var(--color-text);
   font: inherit;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 .champ-saisie:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 4px rgba(12, 50, 133, 0.1);
+  background: #ffffff;
   transform: translateY(-1px);
 }
 
@@ -269,13 +272,12 @@ select.champ-saisie {
   font: inherit;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 16px 28px rgba(12, 50, 133, 0.2);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: none;
+  transition: transform 0.25s ease;
 }
 
 .bouton-formulaire:hover {
   transform: translateY(-2px);
-  box-shadow: 0 22px 34px rgba(12, 50, 133, 0.24);
 }
 
 .texte-formulaire {

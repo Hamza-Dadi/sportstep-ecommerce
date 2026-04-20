@@ -4,9 +4,9 @@
   --color-accent: #ff8a3d;
   --color-text: #172033;
   --color-muted: #61708d;
-  --color-surface: rgba(255, 255, 255, 0.84);
-  --color-border: rgba(12, 50, 133, 0.12);
-  --shadow-soft: 0 25px 60px rgba(8, 31, 85, 0.14);
+  --color-surface: rgba(255, 255, 255, 0.9);
+  --color-border: transparent;
+  --shadow-soft: none;
   --radius-lg: 28px;
   --radius-md: 18px;
   --container-width: 1180px;
@@ -23,13 +23,17 @@ html {
 }
 
 body {
+  position: relative;
   min-height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--color-text);
-  background:
-    radial-gradient(circle at top left, rgba(12, 50, 133, 0.18), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(255, 138, 61, 0.16), transparent 28%),
-    linear-gradient(135deg, #f8fbff 0%, #eef3fb 100%);
+  background: linear-gradient(135deg, #081a3d 0%, #0d3274 52%, #1352a5 100%);
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: none;
 }
 
 a {
@@ -64,7 +68,7 @@ img {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-primary-dark);
+  color: #ffffff;
 }
 
 .mot-symbole {
@@ -72,7 +76,8 @@ img {
   display: inline-block;
   padding: 10px 16px 12px;
   border-radius: 999px;
-  background: rgba(12, 50, 133, 0.06);
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 0.22s ease, background 0.22s ease;
 }
 
 .logo-site .mot-symbole::after {
@@ -83,7 +88,16 @@ img {
   bottom: 8px;
   height: 3px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  background: linear-gradient(135deg, #ffffff, var(--color-accent));
+}
+
+.logo-site:hover .mot-symbole {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.logo-site:active .mot-symbole {
+  transform: translateY(-1px);
 }
 
 .navigation-principale {
@@ -94,14 +108,14 @@ img {
 
 .navigation-principale a,
 .lien-navigation {
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.82);
   font-weight: 600;
   transition: color 0.25s ease;
 }
 
 .navigation-principale a:hover,
 .lien-navigation:hover {
-  color: var(--color-primary);
+  color: #ffffff;
 }
 
 .actions-navigation {
@@ -117,17 +131,16 @@ img {
   min-width: 170px;
   padding: 14px 24px;
   border-radius: 999px;
-  border: 1px solid transparent;
+  border: none;
   background: linear-gradient(135deg, var(--color-primary), #184dba);
   color: #ffffff;
   font-weight: 700;
-  box-shadow: 0 16px 30px rgba(12, 50, 133, 0.2);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  box-shadow: none;
+  transition: transform 0.25s ease, background 0.25s ease;
 }
 
 .bouton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 22px 34px rgba(12, 50, 133, 0.24);
 }
 
 .bouton-petit {
@@ -156,15 +169,14 @@ img {
 .carte-avantage,
 .panneau-espace-membre,
 .bloc-contact {
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-soft);
+  border: none;
+  box-shadow: none;
 }
 
 .contenu-accueil {
   padding: 40px;
   border-radius: var(--radius-lg);
   background: var(--color-surface);
-  backdrop-filter: blur(14px);
 }
 
 .etiquette-accueil,
@@ -232,7 +244,7 @@ img {
   min-height: 560px;
   padding: 30px;
   border-radius: 36px;
-  background: linear-gradient(160deg, rgba(12, 50, 133, 0.98), rgba(24, 77, 186, 0.88));
+  background: linear-gradient(160deg, #0c3285, #1749b1);
   overflow: hidden;
 }
 
@@ -241,7 +253,7 @@ img {
   right: -20px;
   bottom: 16px;
   width: min(100%, 560px);
-  filter: drop-shadow(0 26px 36px rgba(0, 0, 0, 0.22));
+  filter: none;
 }
 
 .carte-promotion,
@@ -251,7 +263,7 @@ img {
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.92);
   color: var(--color-text);
-  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: none;
 }
 
 .carte-promotion {
@@ -299,9 +311,19 @@ img {
   margin-bottom: 28px;
 }
 
+.entete-section .etiquette-section {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
 .entete-section h2 {
   font-size: clamp(1.9rem, 3vw, 2.9rem);
   line-height: 1.15;
+  color: #ffffff;
+}
+
+.entete-section p {
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .grille-collections,
