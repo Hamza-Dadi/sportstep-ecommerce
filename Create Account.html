@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creer un compte | SportStep</title>
+  <link rel="stylesheet" href="./main.css" />
+</head>
+<body>
+  <main class="page-authentification">
+    <div class="en-tete-page-auth">
+      <a class="marque-site" href="index.html" aria-label="SportStep">
+        <span class="mot-symbole">SportStep</span>
+      </a>
+    </div>
+
+    <div class="grille-authentification">
+    <section class="bloc-authentification bloc-informations">
+      <p class="etiquette-authentification">Nouvel utilisateur</p>
+      <h1>Creer un compte en quelques etapes</h1>
+      <p class="texte-authentification">
+        Rejoignez la communaute SportStep pour profiter de recommandations
+        personnalisees, suivre vos commandes et acceder a des offres exclusives.
+      </p>
+
+      <ul class="liste-informations">
+        <li>Inscription simple et rapide.</li>
+        <li>Acces aux promotions reservees aux membres.</li>
+        <li>Suivi de commande plus pratique.</li>
+      </ul>
+
+      <a class="lien-retour" href="index.html">Retour a l'accueil</a>
+    </section>
+
+    <section class="bloc-authentification bloc-formulaire">
+      <form class="carte-formulaire" id="formulaire-inscription" action="index.html">
+        <h2>Inscription</h2>
+        <p class="introduction-formulaire">Remplissez le formulaire pour creer votre compte.</p>
+
+        <div class="groupe-champ">
+          <label for="nom-complet">Nom complet</label>
+          <input
+            id="nom-complet"
+            name="fullName"
+            type="text"
+            class="champ-saisie"
+            placeholder="Votre nom complet"
+            autocomplete="name"
+            required
+          />
+        </div>
+
+        <div class="groupe-champ">
+          <label for="email-inscription">Adresse email</label>
+          <input
+            id="email-inscription"
+            name="email"
+            type="email"
+            class="champ-saisie"
+            placeholder="exemple@mail.com"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div class="groupe-champ">
+          <label for="categorie-preferee">Categorie preferee</label>
+          <select id="categorie-preferee" name="sportType" class="champ-saisie" required>
+            <option value="">Choisir une categorie</option>
+            <option value="course">Course a pied</option>
+            <option value="entrainement">Entrainement</option>
+            <option value="urbain">Sport urbain</option>
+          </select>
+        </div>
+
+        <div class="groupe-champ">
+          <label for="mot-de-passe-inscription">Mot de passe</label>
+          <input
+            id="mot-de-passe-inscription"
+            name="password"
+            type="password"
+            class="champ-saisie"
+            placeholder="Au moins 8 caracteres"
+            autocomplete="new-password"
+            minlength="8"
+            required
+          />
+        </div>
+
+        <div class="groupe-champ">
+          <label for="confirmation-mot-de-passe">Confirmer le mot de passe</label>
+          <input
+            id="confirmation-mot-de-passe"
+            name="confirmPassword"
+            type="password"
+            class="champ-saisie"
+            placeholder="Retapez votre mot de passe"
+            autocomplete="new-password"
+            minlength="8"
+            required
+          />
+        </div>
+
+        <label class="case-cocher case-cocher-large" for="conditions-utilisation">
+          <input id="conditions-utilisation" type="checkbox" name="terms" required />
+          <span>J'accepte les conditions d'utilisation et la politique du site.</span>
+        </label>
+
+        <button class="bouton-formulaire" type="submit">Creer mon compte</button>
+
+        <p class="texte-formulaire">
+          Vous avez deja un compte ?
+          <a class="lien-formulaire" href="Login.html">Se connecter</a>
+        </p>
+      </form>
+    </section>
+    </div>
+  </main>
+</body>
+</html>

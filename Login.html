@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connexion | SportStep</title>
+  <link rel="stylesheet" href="./main.css" />
+</head>
+<body>
+  <main class="page-authentification">
+    <div class="en-tete-page-auth">
+      <a class="marque-site" href="index.html" aria-label="SportStep">
+        <span class="mot-symbole">SportStep</span>
+      </a>
+    </div>
+
+    <div class="grille-authentification">
+    <section class="bloc-authentification bloc-informations">
+      <p class="etiquette-authentification">Espace membre</p>
+      <h1>Connectez-vous a votre compte</h1>
+      <p class="texte-authentification">
+        Retrouvez vos commandes, vos offres preferees et un espace plus
+        organise pour suivre votre experience sur le site.
+      </p>
+
+      <ul class="liste-informations">
+        <li>Acces rapide a votre espace client.</li>
+        <li>Suivi simple de vos commandes.</li>
+        <li>Design clair et facile a utiliser.</li>
+      </ul>
+
+      <a class="lien-retour" href="index.html">Retour a l'accueil</a>
+    </section>
+
+    <section class="bloc-authentification bloc-formulaire">
+      <form class="carte-formulaire" id="formulaire-connexion" action="index.html">
+        <h2>Connexion</h2>
+        <p class="introduction-formulaire">Entrez vos informations pour acceder a votre espace.</p>
+
+        <div class="groupe-champ">
+          <label for="email-connexion">Adresse email</label>
+          <input
+            id="email-connexion"
+            name="email"
+            type="email"
+            class="champ-saisie"
+            placeholder="exemple@mail.com"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div class="groupe-champ">
+          <label for="mot-de-passe-connexion">Mot de passe</label>
+          <input
+            id="mot-de-passe-connexion"
+            name="password"
+            type="password"
+            class="champ-saisie"
+            placeholder="Votre mot de passe"
+            autocomplete="current-password"
+            minlength="8"
+            required
+          />
+        </div>
+
+        <div class="options-formulaire">
+          <label class="case-cocher" for="souvenir-connexion">
+            <input id="souvenir-connexion" type="checkbox" name="remember" />
+            <span>Se souvenir de moi</span>
+          </label>
+          <a href="#">Mot de passe oublie ?</a>
+        </div>
+
+        <button class="bouton-formulaire" type="submit">Se connecter</button>
+
+        <p class="texte-formulaire">
+          Vous n'avez pas encore de compte ?
+          <a class="lien-formulaire" href="./Create Account.html">Creer un compte</a>
+        </p>
+      </form>
+    </section>
+    </div>
+  </main>
+</body>
+</html>
