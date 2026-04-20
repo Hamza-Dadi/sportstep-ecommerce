@@ -62,9 +62,7 @@ img {
 
 .bloc-informations {
   padding: 34px;
-  background:
-    linear-gradient(150deg, rgba(12, 50, 133, 0.96), rgba(8, 31, 85, 0.92)),
-    url("img/shoes-bg.png") center/cover no-repeat;
+  background: linear-gradient(150deg, rgba(12, 50, 133, 0.96), rgba(8, 31, 85, 0.92));
   color: #ffffff;
 }
 

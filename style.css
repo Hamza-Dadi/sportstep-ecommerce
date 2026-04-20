@@ -232,9 +232,7 @@ img {
   min-height: 560px;
   padding: 30px;
   border-radius: 36px;
-  background:
-    linear-gradient(160deg, rgba(12, 50, 133, 0.98), rgba(24, 77, 186, 0.88)),
-    url("img/shoes-bg.png") center/cover no-repeat;
+  background: linear-gradient(160deg, rgba(12, 50, 133, 0.98), rgba(24, 77, 186, 0.88));
   overflow: hidden;
 }
 
@@ -358,9 +356,7 @@ img {
   gap: 24px;
   padding: 34px;
   border-radius: 32px;
-  background:
-    linear-gradient(135deg, rgba(12, 50, 133, 0.96), rgba(8, 31, 85, 0.95)),
-    url("img/shoes-bg.png") center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(12, 50, 133, 0.96), rgba(8, 31, 85, 0.95));
 }
 
 .texte-espace-membre {
